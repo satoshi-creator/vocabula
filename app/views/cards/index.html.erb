@@ -1,0 +1,26 @@
+<h1>カード一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>表</th>
+      <th>裏</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cards.each do |card| %>
+      <tr>
+        <td><%= card.front %></td>
+        <td><%= card.back %></td>
+        <td>
+          <%= link_to '詳細', card %>
+          <%= link_to '編集', edit_deck_card_path(@deck, card) %>
+          <%= link_to '削除', deck_card_path(@deck, card), method: :delete, data: { confirm: '本当に削除しますか?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to '新しいカードを作成', new_deck_card_path(@deck) %>

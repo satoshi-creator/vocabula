@@ -1,0 +1,12 @@
+<h1>デッキ一覧</h1>
+
+<ul>
+  <% @decks.each do |deck| %>
+    <li>
+      <%= link_to deck.name, deck %>
+      (カード数: <%= deck.cards.count %>)
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to '新しいデッキを作成', new_deck_path %>

@@ -1,0 +1,14 @@
+<h1>デッキ詳細</h1>
+
+<h2><%= @deck.name %></h2>
+
+<h3>カード一覧</h3>
+<ul>
+  <% @deck.cards.each do |card| %>
+    <li><%= card.front %> - <%= card.back %></li>
+  <% end %>
+</ul>
+
+<%= link_to '新しいカードを作成', new_deck_card_path(@deck) %>
+<%= link_to '編集', edit_deck_path(@deck) %> |
+<%= link_to '一覧に戻る', decks_path %>

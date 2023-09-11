@@ -1,0 +1,7 @@
+<h1>カード詳細</h1>
+
+<p><strong>表:</strong> <%= @card.front %></p>
+<p><strong>裏:</strong> <%= @card.back %></p>
+
+<%= link_to '編集', edit_deck_card_path(@deck, @card) %> |
+<%= link_to '一覧に戻る', deck_cards_path(@deck) %>
